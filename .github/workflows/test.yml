@@ -1,4 +1,4 @@
-name: Build and Deploy Pokedex
+name: Pruebas de acceso Pokedex
 on:
   push:
     branches: [master]
