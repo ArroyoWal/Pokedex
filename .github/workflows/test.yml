@@ -1,0 +1,26 @@
+name: Build and Deploy Pokedex
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest    
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.3.1
+      with: 
+            persist-credentials: false
+
+    - name: Instalacion y Build
+      run: |
+        npm install
+        npm run build
+        
+    - name: Pruebas de acceso al sitio
+      uses: ./load-test-action
+      with:
+          url: https://arroyowal.github.io/Pokedex/
+          number-of-requests: 10
+          concurrency: 2
