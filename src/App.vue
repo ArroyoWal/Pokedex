@@ -11,7 +11,7 @@
 <script>
 
 
-  import Header from './components/Header.vue'
+  import Header from './components/Heasdassdasd.vue'
   import Pokemon from "./components/Pokemon";
 
 export default {
